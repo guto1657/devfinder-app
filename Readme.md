@@ -23,6 +23,7 @@ for the development of this project the following technologies where used:
 - Visual Studio Code;
 - HTML5;
 - CSS3;
+- JavaScript;
 - React Js;
 - Styled Components
 ---
