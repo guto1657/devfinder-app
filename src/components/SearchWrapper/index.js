@@ -20,10 +20,22 @@ export const SearchWrapper = () => {
     };
   }, [actions]);
 
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      actions.GetGitHubUser(inputRef.current.value);
+    }
+  };
+
   return (
     <Wrapper light={currentTheme(theme)}>
       <SearchIcon src={Icon} />
-      <Input type={'text'} ref={inputRef} light={currentTheme(theme)} placeholder={'Search GitHub username...'} />
+      <Input
+        type={'text'}
+        ref={inputRef}
+        light={currentTheme(theme)}
+        placeholder={'Search GitHub username...'}
+        onKeyPress={handleEnterPress}
+      />
       {hasError && <ErrorSpan>No results</ErrorSpan>}
       <Button onClick={() => actions.GetGitHubUser(inputRef.current.value)}> Search</Button>
     </Wrapper>
